@@ -1,3 +1,6 @@
 .DS_Store
 *.tar
 *.tar.gz
+/bin
+/uploads
+/dist
