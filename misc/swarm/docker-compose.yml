@@ -16,6 +16,7 @@ services:
     healthcheck:
       test: ["CMD", "docker", "info"]
       interval: 2s
+      start_period: 0s
       start_interval: 3s
     restart: on-failure
 
@@ -35,6 +36,7 @@ services:
     healthcheck:
       test: ["CMD", "docker", "info"]
       interval: 2s
+      start_period: 0s
       start_interval: 3s
 
   worker-2:
@@ -53,6 +55,7 @@ services:
     healthcheck:
       test: ["CMD", "docker", "info"]
       interval: 2s
+      start_period: 0s
       start_interval: 3s
 
   # Service d'initialisation du cluster Swarm
