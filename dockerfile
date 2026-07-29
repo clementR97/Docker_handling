@@ -10,9 +10,7 @@ RUN apk upgrade \
 
 RUN wget -O libra.tar.gz \
     ${LIBRA_REPOSITORY}/releases/download/v${LIBRA_VERSION}/libra_${LIBRA_VERSION}_linux_arm64.tar.gz \
-    
     && echo "${LIBRA_CHECKSUM} libra.tar.gz" | sha256sum -c \
-
     && mkdir -p /usr/local/bin \
     && tar -xzf libra.tar.gz -C /usr/local/bin libra \
     && chmod +x /usr/local/bin/libra
