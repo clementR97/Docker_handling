@@ -9,7 +9,10 @@ services:
       MINIO_ROOT_USER: minio
       MINIO_ROOT_PASSWORD: NotSoSecret
    command: server --console-address ":9001" /data
-
+   deploy:
+     placement:
+      constraints:
+       - node.labels.model == storage
   
   
 
@@ -25,6 +28,9 @@ services:
     update_config:
       parallelism: 1
       delay: 5s 
+    placement:
+      constraints:
+       - node.labels.model == compute
 
 volumes:
   minio_storage:
